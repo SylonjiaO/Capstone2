@@ -3,40 +3,6 @@ let locationData = document.getElementById("locationData");
 let typeCollection = document.getElementById("byType");
 let radioBtns = document.querySelector('input[name="byStateType"]:checked');
 
-// function loadByBoth() {
-
-// //  if (radioBtns && radioBtns.value === "byState") {
-// //     for(const location of locationsArray){
-// //         let option = new Option(location, location)
-// //         locationData.appendChild(option);
-// //     }
-// //    }
-// // if (radioBtns && radioBtns.value === "byType") {
-// //     for(const type of parkTypesArray){
-// //         let option = new Option(type, type)
-// //         typeData.appendChild(option);
-// //     }
-// // }
-// }
-// element.addEventListener('click', function() { /* do stuff here*/ }, false);
-
-
-// stateCollection.addEventListener = ('click', event  => {
-
-//     for(const location of locationsArray){
-//      let option = new Option(location, location);
-//        locationData.appendChild(option);
-//      }
-//      return loadByState;
-//      }, false);
-
-// function loadByType(){
-//     for(const type  of parkTypesArray){
-//         let option = new Option(type, type);
-//         typeData.appendChild(option);
-// }
-// }
-
 function loadByState() {
     for (const location of locationsArray) {
         let option = new Option(location, location);
@@ -55,7 +21,7 @@ function onSelectType(event) {
     let selectedVal = event.target.value;
 
     let filteredData = nationalParksArray.filter(item => {
-        let type = item.type ?? '';
+        let type = item.LocationName ?? '';
         if (type?.includes(selectedVal)) {
             return true;
         }
@@ -101,10 +67,12 @@ function onShowToTable(listData = []) {
         let cell1 = row.insertCell(0)
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
+        let cell4 = row.insertCell(3)
 
         cell1.innerHTML = item.State;
         cell2.innerHTML = item.LocationName;
         cell3.innerHTML = item.Fax;
+        cell4.innerHTML = item.Visit;
     }
 }
 
@@ -121,11 +89,47 @@ function onChangeState(value) {
 
 }
 
-
-
-
+function onChangeAll(){
+    onShowToTable(nationalParksArray);
+}
 
 window.onload = function () {
     loadByState();
     loadByType();
 }
+
+
+
+// function loadByBoth() {
+
+// //  if (radioBtns && radioBtns.value === "byState") {
+// //     for(const location of locationsArray){
+// //         let option = new Option(location, location)
+// //         locationData.appendChild(option);
+// //     }
+// //    }
+// // if (radioBtns && radioBtns.value === "byType") {
+// //     for(const type of parkTypesArray){
+// //         let option = new Option(type, type)
+// //         typeData.appendChild(option);
+// //     }
+// // }
+// }
+// element.addEventListener('click', function() { /* do stuff here*/ }, false);
+
+
+// stateCollection.addEventListener = ('click', event  => {
+
+//     for(const location of locationsArray){
+//      let option = new Option(location, location);
+//        locationData.appendChild(option);
+//      }
+//      return loadByState;
+//      }, false);
+
+// function loadByType(){
+//     for(const type  of parkTypesArray){
+//         let option = new Option(type, type);
+//         typeData.appendChild(option);
+// }
+// }
