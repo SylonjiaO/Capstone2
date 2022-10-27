@@ -15,29 +15,22 @@
 
 <body>
   <header>
+    <nav class="nav justify-content-center">
+        <a class="nav-link active" href="index.html" aria-current="page">Home</a>
+        <a class="nav-link" href="mountains.html">Mountains</a>
+        <a class="nav-link" href="nationalparks.html">Parks</a>
+      </nav>
     <!-- place navbar here -->
   </header>
   <main>
 <div
-><select name="mountainData" id="mountainData" aria-label="mountainData">
+><select name="mountainData" id="mountainData" aria-label="mountainData" onchange="onSelectedMountain(event)">
     <option value="">Select A Mountain</option>
 </select></div>
 <div>
-    <div class="table-responsive">
-        <table class="table table-primary" id="listOfMountains">
-          <thead>
-            <tr>
-              <th scope="col">Mountain Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Elevation</th>
-              <th scope="col">Effort</th>
-              <th scope="col">Image</th>
-            </tr>
-          </thead>
-          <tbody>  
-          </tbody>
-        </table>
-      </div>
+    <div id="card" class="container">
+
+    </div>
 </div>
 
   </main>

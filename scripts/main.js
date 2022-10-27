@@ -53,7 +53,6 @@ function onSelectState(event) {
 
 function onShowToTable(listData = []) {
     let table = document.getElementById('listOfParks');
-
     // clear first
     let rows = table.rows;
 
@@ -69,16 +68,17 @@ function onShowToTable(listData = []) {
         let cell3 = row.insertCell(2);
         let cell4 = row.insertCell(3)
 
-        cell1.innerHTML = item.State;
-        cell2.innerHTML = item.LocationName;
-        cell3.innerHTML = item.Fax;
-        cell4.innerHTML = item.Visit;
+        cell1.innerText = item.State;
+        cell2.innerText = item.LocationName;
+        cell3.innerText = item.Fax;
+        cell4.innerText = item.Visit;
     }
 }
 
 function onChangeState(value) {
     if (value === 'state') {
         document.getElementById('locationData').style.display = 'inline'
+        document.getElementById('typeData').style.display = 'none'
         document.getElementById('typeData').style.display = 'none'
 
     } else {
