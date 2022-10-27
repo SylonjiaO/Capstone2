@@ -44,6 +44,30 @@ function loadByState() {
     }
 }
 
+function loadByType() {
+    for (const type of parkTypesArray) {
+        let option = new Option(type, type);
+        typeData.appendChild(option);
+    }
+}
+
+function onSelectType(event) {
+    let selectedVal = event.target.value;
+
+    let filteredData = nationalParksArray.filter(item => {
+        let type = item.type ?? '';
+        if (type?.includes(selectedVal)) {
+            return true;
+        }
+        return false
+    })
+
+    console.log('filtered data = ', filteredData);
+
+    onShowToTable(filteredData);
+
+}
+
 function onSelectState(event) {
     let selectedVal = event.target.value;
 
@@ -103,4 +127,5 @@ function onChangeState(value) {
 
 window.onload = function () {
     loadByState();
+    loadByType();
 }
