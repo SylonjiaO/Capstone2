@@ -63,15 +63,25 @@ function onShowToTable(listData = []) {
     for (let i = 0; i < listData.length; i++) {
         let item = listData[i];
         let row = table.insertRow(i + 1);
-        let cell1 = row.insertCell(0)
+        let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
-        let cell4 = row.insertCell(3)
+        let cell4 = row.insertCell(3);
 
         cell1.innerText = item.State;
         cell2.innerText = item.LocationName;
         cell3.innerText = item.Fax;
-        cell4.innerText = item.Visit;
+       
+        if (item.Visit){
+        let a = document.createElement('a');
+        let to = document.createTextNode(item.Visit);
+        a.href = item.Visit;
+        a.innerText = "Click Here";
+        a.target = ("_blank")
+        a.appendChild(to);
+        cell4.appendChild(a);
+ 
+       } 
     }
 }
 
@@ -79,19 +89,20 @@ function onChangeState(value) {
     if (value === 'state') {
         document.getElementById('locationData').style.display = 'inline'
         document.getElementById('typeData').style.display = 'none'
-        document.getElementById('typeData').style.display = 'none'
 
-    } else {
+    } else if (value === 'type') {
         document.getElementById('locationData').style.display = 'none'
         document.getElementById('typeData').style.display = 'inline'
 
+    } else {
+        document.getElementById('locationData').style.display = 'none'
+        document.getElementById('typeData').style.display = 'none'
+        onShowToTable(nationalParksArray);
     }
 
+
 }
 
-function onChangeAll(){
-    onShowToTable(nationalParksArray);
-}
 
 window.onload = function () {
     loadByState();
