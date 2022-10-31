@@ -8,7 +8,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
+    <link rel="stylesheet" href="/css/contentpages.css">
     <!-- Bootstrap CSS v5.2.1 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -28,7 +28,7 @@
       <!-- place navbar here -->
     </header>
     <main>
-      <label for="byState"></label>By State
+      <h1>Find National Parks</h1>
       <input
         type="radio"
         name="byStateType"
@@ -36,23 +36,23 @@
         value="byState"
         aria-label="radioByState"
         onchange="onChangeState('state')"
-      />
-      <label for="byPark"></label> By Type<input
+      /><label for="byState">By State</label>
+      <input
         type="radio"
         name="byStateType"
         id="byType"
         value="byType"
         aria-label="radioByType"
         onchange="onChangeState('type')"
-      />
-      <label for="byAll"></label>All<input
+      /><label for="byPark">By Type</label>
+     <input
       type="radio"
       name="byStateType"
       id="byAll"
       value="byAll"
       aria-label="radioByType"
       onchange="onChangeState('all')"
-    />
+    /><label for="byAll">All</label>
       <select
         name="locationData"
         id="locationData"
@@ -84,9 +84,7 @@
         </table>
       </div>
     </main>
-    <footer>
-      <!-- place footer here -->
-    </footer>
+  
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

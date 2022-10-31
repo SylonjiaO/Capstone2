@@ -44,7 +44,7 @@ function onShowCard(mountainData) {
     let mounts = mountainData;
     let div = document.createElement('div')
     card.appendChild(div)
-    div.style = "width: 19rem;max-width: 20rem; margin-right: 3rem;"
+    div.style = "width: 19rem;max-width: 20rem; margin-right: 3rem; border: 7px solid; justify-content: center; margin-bottom: 2rem; padding: 0;"
     div.display = "flex;";
     div.className = "col";
     let cardDesc = document.createElement('p');
@@ -61,6 +61,7 @@ function onShowCard(mountainData) {
     let img = document.createElement('img');
     img.src = "./images/" + mounts.img ?? '';
     img.alt = mounts.name ?? '';
+    img.style = "width:300px; height:200px"
 
     div.appendChild(cardName);
     div.appendChild(img);
