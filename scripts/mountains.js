@@ -25,18 +25,20 @@ function onSelectedMountain(event) {
     let foundData = mountainsArray.find(item => {
         let mountainData = item.name ?? '';
         if (mountainData?.includes(selectedVal)) {
-            card.appendChild(div);
+            return true
         }
         return false
     })
 
     console.log('found data = ', foundData);
-
     onShowCard(foundData);
 
 }
 
+
+
 function onShowCard(cardSection, mountainData) {
+    
     let mounts = mountainData;
     let div = document.createElement('div');
     cardSection.appendChild(div);

@@ -19,8 +19,8 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar row text-dark text-center justify-content-center">
+    <header class="bg-dark text-light">
+      <nav class="navbar row text-center justify-content-center">
         <div class="col-3">
           <a class="nav-link active" href="index.html" aria-current="page"
             >Home</a
@@ -45,10 +45,10 @@
           >
             <option value="">Select A Mountain</option>
           </select>
-          <button type="submit" value="clear" name="allClear" id="clearAllCards">
+          <button type="button" class="btn btn-primary" id="all">Show All</button>
+          <button type="submit" class="btn btn-outline-danger" value="clear" name="allClear" id="clearAllCards">
             Clear All
           </button>
-          <button type="button" class="btn btn-dark" id="all">Show All</button>
         </div>
       </section>
     </header>
