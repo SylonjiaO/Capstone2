@@ -9,7 +9,7 @@
 }
  body {
   position: relative;
-    background-image: url('/images/backgrounds/Free-Nature-Backgrounds-Valley-of-Fire-by-Travel-Coffee-Book\ 1.svg');
+    background-image: url('/images/backgrounds/ken-cheung-1GGo0ldZfo4-unsplash\ 1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -22,24 +22,24 @@
     font-family: 'Antic Didone', Tahoma, Geneva, Verdana, sans-serif;
    text-align: center;
    animation: backgroundchange 100s ease-in-out infinite alternate;
-   animation-fill-mode: forwards;
+   animation-fill-mode: both;
 }
 @keyframes backgroundchange {
   0%{
-    background-image: url('/images/backgrounds/Free-Nature-Backgrounds-Valley-of-Fire-by-Travel-Coffee-Book\ 1.svg');
+    background-image: url('/images/backgrounds/Free-Nature-Backgrounds-Nature-Bison-by-Burst-1024x683\ 1.jpg');
   }
  25% {
-  background-image: url('/images/backgrounds/Free-Nature-Backgrounds-Nature-Bison-by-Burst-1024x683\ 1.svg');
+  background-image: url('/images/backgrounds/Free-Nature-Backgrounds-Valley-of-Fire-by-Travel-Coffee-Book\ 1.jpg');
  
  }
  50% {
-  background-image: url('/images/backgrounds/ken-cheung-1GGo0ldZfo4-unsplash\ 1.svg')
+  background-image: url('/images/backgrounds/ken-cheung-1GGo0ldZfo4-unsplash\ 1.jpg')
  }
  80%{
-  background-image: url('/images/backgrounds/michelle-spollen-dC2FsjoXsPQ-unsplash\ 1.svg')
+  background-image: url('/images/backgrounds/michelle-spollen-dC2FsjoXsPQ-unsplash\ 1.jpg')
  }
  95%{
- background-image: url('/images/backgrounds/nathan-dumlao-Wm4vaMmHwS0-unsplash\ 1.svg')
+ background-image: url('/images/backgrounds/nathan-dumlao-Wm4vaMmHwS0-unsplash\ 1.jpg')
  }
 }
 .overlay {

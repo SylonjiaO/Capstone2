@@ -8,12 +8,18 @@ function showAllMountains() {
         onShowCard(card , mountainData)
     })
 }
+
+
+
 function loadMountainSelection() {
     for (const mountain of mountainsArray) {
         let option = new Option(mountain.name, mountain.name);
         mountains.appendChild(option);
-    }
+    } 
+    mountainsArray.sort(function(a, b){return a.name - b.name});
+loadMountainSelection();
 }
+
 
 function clearAllCards() {
     card.innerHTML = '';
@@ -22,7 +28,7 @@ function clearAllCards() {
 function onSelectedMountain(event) {
     let selectedVal = event.target.value;
 
-    let foundData = mountainsArray.find(item => {
+    let foundMountain = mountainsArray.find(item => {
         let mountainData = item.name ?? '';
         if (mountainData?.includes(selectedVal)) {
             return true
@@ -30,8 +36,8 @@ function onSelectedMountain(event) {
         return false
     })
 
-    console.log('found data = ', foundData);
-    onShowCard(foundData);
+    console.log('found data = ', foundMountain);
+    onShowCard(card, foundMountain);
 
 }
 
@@ -42,7 +48,7 @@ function onShowCard(cardSection, mountainData) {
     let mounts = mountainData;
     let div = document.createElement('div');
     cardSection.appendChild(div);
-    div.style = "width: 19rem;max-width: 20rem; margin-right: 3rem; border: 7px solid; justify-content: center; margin-bottom: 2rem; padding: 0;"
+    div.style = "width: 20rem;max-width: 21rem; margin-right: 3rem; border: 7px solid; justify-content: center; margin-bottom: 2rem; padding: 0; margin-top: 2rem;"
     // div.display = "flex;";
     div.className = "col";
     let cardDesc = document.createElement('p');
