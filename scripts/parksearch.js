@@ -76,7 +76,6 @@ function onShowToTable(listData = []) {
         let a = document.createElement('a');
         let to = document.createTextNode(item.Visit);
         a.href = item.Visit;
-        a.innerText = "Click Here";
         a.target = ("_blank")
         a.appendChild(to);
         cell4.appendChild(a);
